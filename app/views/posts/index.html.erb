@@ -1,0 +1,12 @@
+<title>Hikes</title>
+
+<h1>Hikes</h1>
+
+<% @posts.each do |post| %>
+  <div>
+    <%= link_to (image_tag post.image.url(:original),  :size => "300"), post_path(post) %>
+    <p>
+      <%= post.caption %>
+    </p>
+  </div>
+<% end %>
