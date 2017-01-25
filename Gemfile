@@ -38,9 +38,6 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
-
-gem 'simple_form'
-
 gem 'coffee-script-source', '1.8.0'
 
 gem 'bootstrap-sass', '~> 3.3.5'
@@ -50,3 +47,7 @@ gem 'fog'
 gem 'aws-sdk', '< 2.0'
 
 gem 'paperclip'
+
+gem 'devise'
+
+gem 'simple_form'
