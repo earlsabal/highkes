@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'pages#dashboard'
+  root 'posts#index'
 
   devise_for :users
   resources :posts
