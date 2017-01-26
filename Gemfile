@@ -57,3 +57,7 @@ gem 'paperclip'
 gem 'devise'
 
 gem 'simple_form'
+
+group :production, :staging do
+      gem 'rails_12factor'
+end
