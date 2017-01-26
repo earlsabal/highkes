@@ -85,8 +85,6 @@ Rails.application.configure do
       },
       :fog_directory => ENV["S3_BUCKET_NAME"]
   }
-  end
-
   config.cache_classes = true
   config.serve_static_assets = true
   config.assets.compile = true
