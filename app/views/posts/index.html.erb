@@ -4,7 +4,7 @@
 
 <% @posts.each do |post| %>
   <div>
-    <%= link_to (image_tag post.image.url(:original),  :size => "300"), post %>
+    <%= link_to (image_tag post.image.url,  :size => "300"), post %>
     <p>
       <%= post.caption %>
     </p>
