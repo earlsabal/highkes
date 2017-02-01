@@ -1,8 +1,11 @@
 <div>
-    <%= image_tag @post.image.url(:original),  :size => "600", class:'post-image'%>
+	<img>
+		<%= image_tag @post.image.url(:original), class:'post-image'%>
+	</img>
+
     <p>
       <%= @post.caption %>
     </p>
 
     <%= render "poster_options", :post => @post %>
-  </div>
+</div>
