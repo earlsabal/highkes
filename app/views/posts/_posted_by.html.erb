@@ -1,0 +1,7 @@
+<p>
+  <% user = User.find(post.user_id) %>
+  <% if user.username == nil %>
+    <% user.username = user.email %>
+  <% end %>
+  posted by: <%= link_to (user.username), "/profile/#{user.id}" %>
+</p> 

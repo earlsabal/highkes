@@ -9,11 +9,7 @@
       <%= post.caption %>
     </p>
 
-    <p>
-      <% user = User.find(post.user_id) %>
-      posted by: <%= link_to (user.email), "/profile/#{user.id}" %>
-    </p> 
-
+    <%= render "posted_by", :post => post %>
     <%= render "poster_options", :post => post %>
   </div>
 <% end %>
