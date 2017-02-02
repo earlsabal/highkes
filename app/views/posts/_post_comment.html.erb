@@ -1,0 +1,11 @@
+<div class="post">
+<h3>Post Your Comment</h3>
+  <%= simple_form_for([@post, @post.comments.build]) do |f| %>
+    <div class="field">
+      <%= f.text_area :body %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>

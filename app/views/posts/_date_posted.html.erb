@@ -1,0 +1,5 @@
+<% if post.created_at > Time.now.beginning_of_day %>
+    <%="#{time_ago_in_words(post.created_at)} ago"%>
+<% else %>
+    <%= post.created_at.strftime("%b %d, %Y") %>
+<% end %>
