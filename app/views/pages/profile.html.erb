@@ -1,5 +1,9 @@
 <title><%= @user.username %></title>
 
+<div class="medium_avatar">
+	<%= render "/posts/profile_pic", :user => @user %>
+</div>
+
 <h1><%= @user.username %>'s Page</h1>
 
 <%= render "posts" %>

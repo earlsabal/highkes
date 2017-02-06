@@ -1,7 +1,11 @@
 class User < ActiveRecord::Base
   has_many :posts
+  has_many :hearts
+  has_many :hearted_posts, :through => :hearts, :source => :post
   has_many :comments
   attr_accessor :login
+  has_attached_file :image, :source_file_options => { :all => '-auto-orient' }
+  validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
   validates :username,
 	  :presence => true,
 	  :uniqueness => {
@@ -30,6 +34,20 @@ class User < ActiveRecord::Base
 	  end
 	end
 
+	def heart!(post)
+	  self.hearts.create!(post_id: post.id)
+	end
+
+	# destroys a heart with matching post_id and user_id
+	def unheart!(post)
+	  heart = self.hearts.find_by_post_id(post.id)
+	  heart.destroy!
+	end
+
+	# returns true of false if a post is hearted by user
+	def heart?(post)
+	  self.hearts.find_by_post_id(post.id)
+	end
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

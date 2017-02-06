@@ -2,13 +2,24 @@
 
 <% @posts.each do |post| %>
   <div>
-    <%= link_to (image_tag post.image.url(:original), class:'post-image'), post %>
+  	<div class="small_avatar">
+	  	<div align="left">
+	  		<%= render "posted_by", :params => post.user_id %>
+	  	</div>
+	</div>
+    <%= link_to (image_tag post.image.url(:original)), post %>
+    <div align='left'>
+      <%= div_for post do %>
+        <p>
+          <%= render partial: "hearts/like_button", locals: { post: post } %> <%= post.hearts.size %> likes
+        </p>
+      <% end %>
+    </div>
     <p>
       <%= post.caption %>
     </p>
 
     <%= render "date_posted", :post => post %>
-    <%= render "posted_by", :post => post %>
     <%= render "poster_options", :post => post %>
   </div>
 <% end %>

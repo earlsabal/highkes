@@ -1,5 +1,10 @@
 <title>Welcome!</title>
 
+<div class="medium_avatar">
+	<br /><%= render "/posts/profile_pic", :user => current_user %>
+</div>
+
 <h1>Your Page</h1>
+<%= link_to "Your Likes", '/your_likes' %>
 
 <%= render "posts" %>

@@ -1,7 +1,7 @@
 <p>
-  <% user = User.find(post.user_id) %>
+  <% user = User.find(params) %>
   <% if user.username == nil %>
     <% user.username = user.email %>
   <% end %>
-  posted by: <%= link_to (user.username), "/profile/#{user.id}" %>
+  <%= render "profile_pic", :user => user %>    <%= link_to (user.username), "/profile/#{user.id}" %>
 </p> 

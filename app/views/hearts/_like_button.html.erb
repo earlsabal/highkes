@@ -1,0 +1,7 @@
+<div class="small_avatar">
+	<% if current_user.heart?(post) %>
+	  <%= link_to image_tag("star.png"), unheart_path(post_id: post.id), remote: true, method: :delete  %>
+	<% else %>
+	  <%= link_to image_tag("star_none.png"), heart_path(post_id: post.id), remote: true  %>
+	<% end %>
+</div>

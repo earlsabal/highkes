@@ -1,5 +1,7 @@
 class Post < ActiveRecord::Base
 	belongs_to :user
+	has_many :hearts
+	has_many :hearting_users, through: :hearts, source: :user
 	has_many :comments
 	validates :image, presence: true
 
