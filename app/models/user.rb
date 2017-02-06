@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   has_many :posts
-  has_many :hearts
+  has_many :hearts, dependent: :destroy
   has_many :hearted_posts, :through => :hearts, :source => :post
   has_many :comments
   attr_accessor :login
