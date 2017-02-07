@@ -47,6 +47,8 @@ gem 'simple_form'
 
 gem 'image_button_to'
 
+gem 'jquery-turbolinks'
+
 group :production, :staging do
       gem 'rails_12factor'
 end
