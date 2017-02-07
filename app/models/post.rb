@@ -1,7 +1,7 @@
 class Post < ActiveRecord::Base
 	belongs_to :user
-	has_many :hearts, dependent: :destroy
-	has_many :hearting_users, through: :hearts, source: :user
+	has_many :likes, dependent: :destroy
+	has_many :liking_users, through: :likes, source: :user
 	has_many :comments
 	validates :image, presence: true
 

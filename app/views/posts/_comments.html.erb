@@ -3,16 +3,14 @@
 
 	<% @post.comments.each do |comment| %>
 	  <div class="small_avatar">
-	    <%= render "posted_by", :params => comment.user_id %>
+	  	<p>
+		    <%= render "posted_by", :params => comment.user_id %> <%= simple_format comment.body %>
+		</p>
 	  </div>
-
-	  <p>
-	    <b>Comment:</b>
-	    <%= simple_format comment.body %>
-	  </p>
 
 	  <% if current_user.id == comment.user_id %>
 	  	<%= link_to "Delete", [@post, comment], method: :delete, data: {confirm: "Are you sure you want to delete comment ?"} %>
 	  <% end %>
+	  <HR>
 	<% end %>
 </div>

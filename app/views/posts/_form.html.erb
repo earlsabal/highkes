@@ -14,8 +14,9 @@
     </div>
   <% end %>
 
-
-  <%= f.input :image %>
+  <% if @post.image? == false %>
+    <%= f.input :image %>
+  <% end %>
 
 
   <p>

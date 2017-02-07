@@ -12,6 +12,6 @@ class PagesController < ApplicationController
 
 	def your_likes
 		@user = User.find(current_user)
-		@posts = @user.hearted_posts.all
+		@posts = @user.liked_posts.all
 	end
 end

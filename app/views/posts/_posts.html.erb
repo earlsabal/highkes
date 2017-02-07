@@ -10,7 +10,7 @@
   <div align='left'>
     <%= div_for post do %>
       <p>
-        <%= render partial: "hearts/like_button", locals: { post: post } %> <%= post.hearts.size %> likes
+        <%= render partial: "likes/like_button_and_date", locals: { post: post } %> 
       </p>
     <% end %>
   </div>
@@ -19,7 +19,6 @@
     <%= post.caption %>
   </p>
 
-  <%= render "posts/date_posted", :post => post %>
   <%= render "posts/poster_options", :post => post %>
 
 <% end %>

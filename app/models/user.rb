@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_many :posts
-  has_many :hearts, dependent: :destroy
-  has_many :hearted_posts, :through => :hearts, :source => :post
+  has_many :likes, dependent: :destroy
+  has_many :liked_posts, :through => :likes, :source => :post
   has_many :comments
   attr_accessor :login
   has_attached_file :image, :source_file_options => { :all => '-auto-orient' }
@@ -34,19 +34,19 @@ class User < ActiveRecord::Base
 	  end
 	end
 
-	def heart!(post)
-	  self.hearts.create!(post_id: post.id)
+	def like!(post)
+	  self.likes.create!(post_id: post.id)
 	end
 
-	# destroys a heart with matching post_id and user_id
-	def unheart!(post)
-	  heart = self.hearts.find_by_post_id(post.id)
-	  heart.destroy!
+	# destroys a like with matching post_id and user_id
+	def unlike!(post)
+	  like = self.likes.find_by_post_id(post.id)
+	  like.destroy!
 	end
 
-	# returns true of false if a post is hearted by user
-	def heart?(post)
-	  self.hearts.find_by_post_id(post.id)
+	# returns true of false if a post is liked by user
+	def like?(post)
+	  self.likes.find_by_post_id(post.id)
 	end
 
   # Include default devise modules. Others available are:

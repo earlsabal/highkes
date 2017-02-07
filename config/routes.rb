@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root 'posts#index'
 
   devise_for :users
@@ -9,7 +10,8 @@ Rails.application.routes.draw do
   get '/dashboard' => 'pages#dashboard'
   get '/profile/:id' => 'pages#profile'
   get '/your_likes' => 'pages#your_likes'
+  get '/posts/:id/likes' => 'posts#likes'
   
-  match 'heart', to: 'hearts#heart', via: :post
-  match 'unheart', to: 'hearts#unheart', via: :delete
+  match 'like', to: 'likes#like', via: :post
+  match 'unlike', to: 'likes#unlike', via: :delete
 end

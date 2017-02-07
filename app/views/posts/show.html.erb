@@ -3,6 +3,14 @@
 		<%= image_tag @post.image.url(:original)%>
 	</img>
 
+    <div align='left'>
+    	<%= div_for @post do %>
+      		<p>
+        		<%= render partial: "likes/like_button_and_date", locals: { post: @post } %> 
+      		</p>
+    	<% end %>
+  	</div>
+
     <p>
       <%= @post.caption %>
     </p>

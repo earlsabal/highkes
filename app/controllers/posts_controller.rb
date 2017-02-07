@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 	before_action :authenticate_user!
-	before_action :set_post, only: [:show, :edit, :update, :destroy]
+	before_action :set_post, only: [:show, :edit, :update, :destroy, :likes]
 	def index
 		@posts = Post.all
 	end
@@ -27,7 +27,6 @@ class PostsController < ApplicationController
 	end
 
 	def edit
-		@post = Post.find(post_params)
 	end
 
 	def update
@@ -44,6 +43,10 @@ class PostsController < ApplicationController
 		@post.destroy
 		flash[:success] = "Post deleted."
 		redirect_to posts_path
+	end
+
+	def likes
+		@users = @post.liking_users.all
 	end
 
 	private
