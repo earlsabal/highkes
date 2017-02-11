@@ -21,3 +21,6 @@ config/database.yml
 
 # Ignore all local photos
 /public/system
+
+# Ignore credentials
+/pusher-realtime-chat-widget/src/ruby-sinatra/config.rb
