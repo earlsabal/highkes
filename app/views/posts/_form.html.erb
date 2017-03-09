@@ -1,31 +1,30 @@
 <%= simple_form_for @post do |f| %>
 
-  <% if @post.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@post.errors.count, "error") %> prohibited
-        this post from being saved:
-      </h2>
-      <ul>
-        <% @post.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+    <% if @post.errors.any? %>
+        <div id="error_explanation">
+            <h2>
+                <%= pluralize(@post.errors.count, "error") %> prohibited
+                this post from being saved:
+            </h2>
+            <ul>
+                <% @post.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
 
-  <% if @post.image? == false %>
-    <%= f.input :image %>
-  <% end %>
+    <% if @post.image? == false %>
+        <%= f.input :image %>
+    <% end %>
 
+    <p>
+    	<%= f.label :caption %><br>
+    	<%= f.text_area :caption %>
+    </p>
 
-  <p>
-  	<%= f.label :caption %><br>
-  	<%= f.text_area :caption %>
-  </p>
-
-  <p>
-  	<%= f.button :submit, class: "btn btn-primary" %>
-  </p>
+    <p>
+    	<%= f.button :submit, class: "btn btn-primary" %>
+    </p>
 
 <% end %>

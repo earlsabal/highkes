@@ -27,6 +27,3 @@ img {
     position: static;
 }
 
-.likes_rows:nth-child(odd) {
-	background-color: gray;
-}
