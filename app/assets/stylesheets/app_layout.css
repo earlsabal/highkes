@@ -12,7 +12,6 @@ img {
 }
 
 .small_avatar img {
-	float: left;
 	width: 40px;
 	height: 40px;
 	border-radius: 50%
@@ -27,3 +26,4 @@ img {
 .dropdown-backdrop {
     position: static;
 }
+

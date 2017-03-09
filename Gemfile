@@ -27,7 +27,9 @@ gem 'devise'
 gem 'simple_form'
 gem 'image_button_to'
 gem 'jquery-turbolinks'
-gem 'pusher'
+gem 'faye'
+gem 'thin', require: false
+gem 'sync'
 
 group :production, :staging do
       gem 'rails_12factor'

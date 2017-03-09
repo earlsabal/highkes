@@ -1,5 +1,5 @@
 <% if user.image.present? %>
 	<%= image_tag user.image.url(:original) %>
 <% else %>
-		<%= image_tag("no-profile.jpg", size: '40x40') %>
+	<%= image_tag("no-profile.jpg", size: '40x40') %>
 <% end %>

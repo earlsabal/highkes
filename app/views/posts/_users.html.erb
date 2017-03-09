@@ -1,10 +1,8 @@
 <title>Likes</title>
 <h1>Likes</h1>
 <div class="small_avatar">
-	<div align="left">
-		<% @users.each do |user| %>
-			<%= render "posts/posted_by", :params => user %>
-			<HR>
-		<% end %>
-	</div>
+	<% @users.each do |user| %>
+		<%= render "posts/posted_by", :params => user %>
+		<HR>
+	<% end %>
 </div>

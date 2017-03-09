@@ -1,8 +1,8 @@
 <div class="small_avatar">
 	<% if current_user.like?(post) %>
-	  <%= link_to image_tag("star.png"), unlike_path(post_id: post.id), remote: true, method: :delete  %>
+		<%= link_to image_tag("star.png"), unlike_path(post_id: post.id), remote: true, method: :delete  %>
 	<% else %>
-	  <%= link_to image_tag("star_none.png"), like_path(post_id: post.id), remote: true, method: :post  %>
+		<%= link_to image_tag("star_none.png"), like_path(post_id: post.id), remote: true, method: :post  %>
 	<% end %>
 	<p style="text-align:left;">
 		<%= link_to (post.likes.size.to_s + " likes"), "/posts/#{post.id}/likes" %>

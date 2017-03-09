@@ -2,4 +2,5 @@
 <% if user.username == nil %>
 <% user.username = user.email %>
 <% end %>
-<%= render "posts/profile_pic", :user => user %>    <%= link_to (user.username), "/profile/#{user.id}" %>
+<%= render "posts/profile_pic", :user => user %>    
+<%= link_to (user.username), "/profile/#{user.id}" %>

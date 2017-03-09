@@ -4,16 +4,10 @@
     <%= render "layouts/meta_tags" %>
     <%= render "layouts/flash_msg" %>
     <%= render "layouts/template" %>
-    <%= render "layouts/realtime_chat_dependencies" %>
 </head>
 <body>
     <%= render "layouts/nav_bar" %>
-
-
-
-
     <div class="container">
-
       <div class="starter-template">
             <% if notice %>
               <p class="alert alert-success"><%= notice %></p>
@@ -24,11 +18,6 @@
             <%= yield %>
       </div>
     </div>
-
-
-         
-
-
   <%= render "layouts/javascript" %>
 </body>
 </html>
