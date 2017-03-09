@@ -12,10 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require turbolinks
 //= require bootstrap-sprockets
 //= require bootstrap
-
-//= require turbolinks
-//= require_tree 
-//= require faye
-//= require comments
+//= require sync
+//= require_tree .

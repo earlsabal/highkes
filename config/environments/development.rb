@@ -37,8 +37,4 @@ Rails.application.configure do
   config.serve_static_assets = true
   Paperclip.options[:command_path] = 'C:\Program Files (x86)\GnuWin32\bin'
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
-
-  Pusher.app_id = 'YOUR_PUSHER_APP_ID'
-  Pusher.key = 'YOUR_PUSHER_KEY'
-  Pusher.secret = 'YOUR_PUSHER_SECRET'
 end
