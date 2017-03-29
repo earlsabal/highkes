@@ -4,9 +4,11 @@
     </div>
 
     <%= link_to (image_tag post.image.url(:original)), post %>
-    <p>
-        <%= render partial: "likes/like_button_and_date", locals: { post: post } %> 
-    </p>
+    <%= div_for post do %>
+	    <p>
+	        <%= render partial: "likes/like_button_and_date", locals: { post: post } %> 
+	    </p>
+	<% end %>
 
     <p><%= post.caption %></p>
 
