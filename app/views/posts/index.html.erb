@@ -1,3 +1,6 @@
 <title>Hikes</title>
 
-<%= render "posts" %>
+<div id="posts">
+	<%= render @posts %>
+</div>
+<%= will_paginate @posts %>

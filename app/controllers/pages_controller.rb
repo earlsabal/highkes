@@ -2,7 +2,7 @@ class PagesController < ApplicationController
 		before_action :authenticate_user!
 	def dashboard
 		@user = User.find(current_user)
-		@posts = @user.posts.all
+		@posts = @user.posts.paginate(page: params[:page], per_page: 5)
 	end
 
 	def profile
