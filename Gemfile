@@ -30,6 +30,7 @@ gem 'jquery-turbolinks'
 gem 'faye'
 gem 'thin', require: false
 gem 'sync'
+gem 'will_paginate'
 
 group :production, :staging do
       gem 'rails_12factor'
